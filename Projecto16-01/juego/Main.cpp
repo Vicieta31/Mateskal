@@ -28,6 +28,6 @@ int main(int argc, char* args[]) {
 	VideoManager::getInstance()->updateScreen();
 
 	VideoManager::getInstance()->waitTime(5000);
-
+	 
 	return 0;
 }
