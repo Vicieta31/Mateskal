@@ -7,6 +7,20 @@ class AudioManager
 {
 public:
 	~AudioManager();
+	void PlaySound();
+	void PlaySound(int channel);
+	void StopSound();
+	void PlaySoundOnce();
+
+	static AudioManager* getInstance() {
+
+		if (pInstance == NULL) {
+			pInstance = new AudioManager();
+		}
+
+		return pInstance;
+
+	};
 
 protected:
 	AudioManager();
