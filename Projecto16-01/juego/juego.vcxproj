@@ -142,11 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="VideoManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="VideoManager.h" />
   </ItemGroup>
