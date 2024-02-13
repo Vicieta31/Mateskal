@@ -1,9 +1,13 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
+#include "InputManager.h"
 
 using namespace std;
 
-int main(int argc, char* args[]) {
+int main(int argc, char* args[]) 
+{
+	
+
 
 	ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Bliss.png", 1);
 
@@ -17,17 +21,20 @@ int main(int argc, char* args[]) {
 
 	ResourceManager::getInstance()->printLoadedGraphics();
 
-	VideoManager::getInstance()->renderGraphic(Two, 0, 0, 1080, 720);
+	while (true)
+	{
+		VideoManager::getInstance()->renderGraphic(Two, 0, 0, 1080, 720);
 
-	VideoManager::getInstance()->updateScreen();
+		VideoManager::getInstance()->updateScreen();
 
-	VideoManager::getInstance()->waitTime(1000);
+		VideoManager::getInstance()->waitTime(1000);
 
-	VideoManager::getInstance()->renderGraphic(Tres, 0, 0, 1080, 720);
+		VideoManager::getInstance()->renderGraphic(Tres, 0, 0, 1080, 720);
 
-	VideoManager::getInstance()->updateScreen();
+		VideoManager::getInstance()->updateScreen();
 
-	VideoManager::getInstance()->waitTime(5000);
+		VideoManager::getInstance()->waitTime(5000);
+	}
 	 
 	return 0;
 }
