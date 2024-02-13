@@ -1,4 +1,5 @@
 #include "InputManager.h"
+#include <iostream>
 
 InputManager* InputManager::pInstance = NULL;
 
@@ -11,6 +12,16 @@ InputManager::InputManager()
 
 	pShot = 0;
 
+	kUp = false;
+	kRight = false;
+	kDown = false;
+	kLeft = false;
+
+	sUp = false;
+	sRight = false;
+	sDown = false;
+	sLeft = false;
+
 }
 
 InputManager::~InputManager() 
@@ -22,57 +33,94 @@ void InputManager::Update()
 	
 	enum Directions { dNEUTRAL, dUP, dUPRIGHT, dRIGHT, dDOWNRIGHT, dDOWN, dDOWNLEFT, dLEFT, dUPLEFT };
 
-	bool kUp = false;
-	bool kRight = false;
-	bool kDown = false;
-	bool kLeft = false;
-
-	bool sUp = false;
-	bool sRight = false;
-	bool sDown = false;
-	bool sLeft = false;
-
 	SDL_Event cEvent;
 	while (SDL_PollEvent(&cEvent)) {
 
 		switch (cEvent.type) {
-		case SDL_KEYDOWN:
+			case SDL_KEYDOWN:
+				switch (cEvent.key.keysym.scancode) 
+				{
+					case SDL_SCANCODE_UP:
+						kUp = true;
+						break;
+					case SDL_SCANCODE_RIGHT:
+						kRight = true;
+						break;
+					case SDL_SCANCODE_DOWN:
+						kDown = true;
+						break;
+					case SDL_SCANCODE_LEFT:
+						kLeft = true;
+						break;
+					case SDL_SCANCODE_W:
+						sUp = true;
+						break;
+					case SDL_SCANCODE_D:
+						sRight = true;
+						break;
+					case SDL_SCANCODE_S:
+						sDown = true;
+						break;
+					case SDL_SCANCODE_A:
+						sLeft = true;
+						break;
+					case SDL_SCANCODE_ESCAPE:
+						pPause = true;
+						break;
+				}
+				break;
 
-			switch (cEvent.key.keysym.scancode) {
-			case SDL_SCANCODE_UP:
-				kUp = true;
+			case SDL_KEYUP:
+				switch (cEvent.key.keysym.scancode) 
+				{
+					case SDL_SCANCODE_UP:
+						kUp = false;
+						break;
+					case SDL_SCANCODE_RIGHT:
+						kRight = false;
+						break;
+					case SDL_SCANCODE_DOWN:
+						kDown = false;
+						break;
+					case SDL_SCANCODE_LEFT:
+						kLeft = false;
+						break;
+					case SDL_SCANCODE_W:
+						sUp = false;
+						break;
+					case SDL_SCANCODE_D:
+						sRight = false;
+						break;
+					case SDL_SCANCODE_S:
+						sDown = false;
+						break;
+					case SDL_SCANCODE_A:
+						sLeft = false;
+						break;
+					case SDL_SCANCODE_ESCAPE:
+						pPause = false;
+						break;
+					}
 				break;
-			case SDL_SCANCODE_RIGHT:
-				kRight = true;
-				break;
-			case SDL_SCANCODE_DOWN:
-				kDown = true;
-				break;
-			case SDL_SCANCODE_LEFT:
-				kLeft = true;
-				break;
-			case SDL_SCANCODE_W:
-				sUp = true;
-				break;
-			case SDL_SCANCODE_D:
-				sRight = true;
-				break;
-			case SDL_SCANCODE_S:
-				sDown = true;
-				break;
-			case SDL_SCANCODE_A:
-				sLeft = true;
-				break;
-			case SDL_SCANCODE_ESCAPE:
-				pPause = true;
-				break;
-			}
-
-			break;
 		}
 
 	}
-
+	if (kUp == true)
+	{
+		std::cout << "Up\n";
+	}
+	if (kDown == true)
+	{
+		std::cout << "Down\n";
+	}
+	if (kLeft == true)
+	{
+		std::cout << "Left\n";
+	}
+	if (kRight == true)
+	{
+		std::cout << "Right\n";
+	}
 	if (pPause != true) {
 
 		bool kVertCancel = false;

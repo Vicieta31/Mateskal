@@ -16,6 +16,16 @@ private:
 
 	static InputManager* pInstance;
 
+	bool kUp;
+	bool kRight;
+	bool kDown;
+	bool kLeft;
+
+	bool sUp;
+	bool sRight;
+	bool sDown;
+	bool sLeft;
+
 public:
 
 	~InputManager();

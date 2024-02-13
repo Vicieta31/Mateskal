@@ -14,10 +14,6 @@ int main(int argc, char* args[]) {
 
 		InputManager::getInstance()->Update();
 
-		cout << "Dir: " << InputManager::getInstance()->GetDirection() << endl;
-
-		cout << "Shot: " << InputManager::getInstance()->GetShot() << endl;
-
 	}
 
 	return 0;

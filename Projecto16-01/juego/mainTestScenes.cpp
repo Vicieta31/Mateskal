@@ -1,6 +1,7 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
+#include <iostream>
 
 using namespace std;
 
@@ -23,6 +24,11 @@ int main(int argc, char* args[])
 
 	while (true)
 	{
+		InputManager::getInstance()->Update();
+
+		
+
+		/*
 		VideoManager::getInstance()->renderGraphic(Two, 0, 0, 1080, 720);
 
 		VideoManager::getInstance()->updateScreen();
@@ -33,7 +39,8 @@ int main(int argc, char* args[])
 
 		VideoManager::getInstance()->updateScreen();
 
-		VideoManager::getInstance()->waitTime(5000);
+		VideoManager::getInstance()->waitTime(100);
+		*/
 	}
 	 
 	return 0;
