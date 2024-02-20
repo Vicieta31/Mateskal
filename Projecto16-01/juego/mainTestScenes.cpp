@@ -4,24 +4,14 @@
 #include <iostream>
 
 using namespace std;
+enum scene {MainMenu, GameLevels, HighScores};
 
 int main(int argc, char* args[]) 
 {
 	
 	int direccion = 0;
 	int disp = 0;
-
-	ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Bliss.png", 1);
-
-	int Two = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/nada.jpg", 1);
-
-	ResourceManager::getInstance()->removeGraphic("TestResources/Bliss.png");
-
-	int Tres = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
-
-	ResourceManager::getInstance()->setAlphaGraphic(Tres, 128);
-
-	ResourceManager::getInstance()->printLoadedGraphics();
+	int escena = MainMenu;
 
 	while (true)
 	{
@@ -31,21 +21,38 @@ int main(int argc, char* args[])
 		//cout << direccion;
 		
 		disp = InputManager::getInstance()->GetShot();
-		cout << disp;
+		//cout << disp;
 
-		/*
-		VideoManager::getInstance()->renderGraphic(Two, 0, 0, 1080, 720);
-
-		VideoManager::getInstance()->updateScreen();
-
-		VideoManager::getInstance()->waitTime(1000);
-
-		VideoManager::getInstance()->renderGraphic(Tres, 0, 0, 1080, 720);
-
-		VideoManager::getInstance()->updateScreen();
-
-		VideoManager::getInstance()->waitTime(100);
-		*/
+		if (direccion == 1)
+		{
+			escena = MainMenu;
+		}
+		if (direccion == 3)
+		{
+			if (escena == MainMenu)
+			{
+				escena = GameLevels;	
+			}
+		}
+		if (direccion == 5)
+		{
+			if (escena == MainMenu)
+			{
+				escena = HighScores;
+			}
+		}
+		if (escena == MainMenu)
+		{
+			cout << "MainMenu" << endl;
+		}
+		if (escena == GameLevels)
+		{
+			cout << "GameLevels" << endl;
+		}
+		if (escena == HighScores)
+		{
+			cout << "HighScores" << endl;
+		}
 	}
 	 
 	return 0;
