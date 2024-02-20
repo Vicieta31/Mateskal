@@ -1,6 +1,6 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
-
+//TEST
 using namespace std;
 
 int main(int argc, char* args[]) {
