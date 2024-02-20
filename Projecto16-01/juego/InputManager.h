@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL.h>
 
+enum Directions { dNEUTRAL, dUP, dUPRIGHT, dRIGHT, dDOWNRIGHT, dDOWN, dDOWNLEFT, dLEFT, dUPLEFT };
+
 class InputManager
 {
 
@@ -15,6 +17,16 @@ private:
 	InputManager();
 
 	static InputManager* pInstance;
+
+	bool kUp;
+	bool kRight;
+	bool kDown;
+	bool kLeft;
+
+	bool sUp;
+	bool sRight;
+	bool sDown;
+	bool sLeft;
 
 public:
 
