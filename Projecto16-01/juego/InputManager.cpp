@@ -31,7 +31,7 @@ InputManager::~InputManager()
 void InputManager::Update()
 {
 	
-	enum Directions { dNEUTRAL, dUP, dUPRIGHT, dRIGHT, dDOWNRIGHT, dDOWN, dDOWNLEFT, dLEFT, dUPLEFT };
+	
 
 	SDL_Event cEvent;
 	while (SDL_PollEvent(&cEvent)) {
@@ -107,19 +107,19 @@ void InputManager::Update()
 	}
 	if (kUp == true)
 	{
-		std::cout << "Up\n";
+		//std::cout << "Up\n";
 	}
 	if (kDown == true)
 	{
-		std::cout << "Down\n";
+		//std::cout << "Down\n";
 	}
 	if (kLeft == true)
 	{
-		std::cout << "Left\n";
+		//std::cout << "Left\n";
 	}
 	if (kRight == true)
 	{
-		std::cout << "Right\n";
+	//	std::cout << "Right\n";
 	}
 	if (pPause != true) {
 
@@ -206,7 +206,7 @@ void InputManager::Update()
 		}
 		else {
 
-			if (kVertCancel != true) {
+			if (kHorCancel != true) {
 
 				if (kRight == true) {
 
@@ -306,7 +306,7 @@ void InputManager::Update()
 		}
 		else {
 
-			if (sVertCancel != true) {
+			if (sHorCancel != true) {
 
 				if (sRight == true) {
 

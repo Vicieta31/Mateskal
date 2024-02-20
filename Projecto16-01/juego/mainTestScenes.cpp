@@ -8,7 +8,8 @@ using namespace std;
 int main(int argc, char* args[]) 
 {
 	
-
+	int direccion = 0;
+	int disp = 0;
 
 	ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Bliss.png", 1);
 
@@ -26,7 +27,11 @@ int main(int argc, char* args[])
 	{
 		InputManager::getInstance()->Update();
 
+		direccion = InputManager::getInstance()->GetDirection();
+		//cout << direccion;
 		
+		disp = InputManager::getInstance()->GetShot();
+		cout << disp;
 
 		/*
 		VideoManager::getInstance()->renderGraphic(Two, 0, 0, 1080, 720);
