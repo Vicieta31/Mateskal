@@ -38,6 +38,8 @@ private:
 		To check if Level XML is loaded correctly.
 		Recieves File Path in a string.
 		Returns True or False.
+		\param FilePath Path to the xml containing the level data.
+		\return True if all worked well, false if not.
 	*/
 	bool CheckLoad(std::string FilePath);
 
@@ -63,12 +65,17 @@ public:
 
 	/*
 		Loads the Tileset into an array of ints, and stores relevant tileset data. 
-		Returns 0 upon success, and 1 upon failure.
-		MUST SUCCESFULLY EXECUTE FIRST BEFORE ANY OTHER METHOD.
+		!MUST SUCCESFULLY EXECUTE FIRST BEFORE ANY OTHER METHOD.
+		\param FilePath Path to the xml containing the level data.
+		\return 0 upon success, and 1 upon failure.
 	*/
 	int FileLoad(std::string FilePath);
 
-	//Returns the ID of the tile at the specified position.
+	/*
+		Returns the ID of the tile at the specified position.
+		\param Position Position of the tile in the array.
+		\return ID of the tile in Int.
+	*/
 	int GetLevelTileID(int Position) { return LevelTiles[Position]; };
 
 	//Returns how many tiles tall the level is.

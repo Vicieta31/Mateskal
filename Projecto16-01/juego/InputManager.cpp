@@ -31,8 +31,6 @@ InputManager::~InputManager()
 void InputManager::Update()
 {
 	
-	
-
 	SDL_Event cEvent;
 	while (SDL_PollEvent(&cEvent)) {
 
