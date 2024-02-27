@@ -12,7 +12,7 @@ int main(int argc, char* args[])
 	int disp = 0;
 	int escena = MainMenu;
 
-	VideoManager::getInstance();
+	VideoManager::getInstance(); 
 
 	while (true)
 	{
