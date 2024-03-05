@@ -145,11 +145,13 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="mainTestScenes.cpp" />
+    <ClCompile Include="SceneDirector.cpp" />
     <ClCompile Include="VideoManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="SceneDirector.h" />
     <ClInclude Include="VideoManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
