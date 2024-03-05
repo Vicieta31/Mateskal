@@ -70,7 +70,7 @@ private:
 	//! Loads from disc and adds a sound to the AudioManager 
 	/*!
 		\param file Filepath to the graphic
-		\return -1 if there's an error when loading
+		\return -1 if there's an error when loading, or the ID where the sound is added/stored if it was already loaded.
 	*/
 	Sint32 addSound(const char* file);
 

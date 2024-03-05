@@ -11,7 +11,6 @@ SoundManager::SoundManager()
 
 	Mix_AllocateChannels(128);
 
-
 }
 
 SoundManager::~SoundManager()
