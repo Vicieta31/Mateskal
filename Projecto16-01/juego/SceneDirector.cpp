@@ -1,6 +1,6 @@
 #include "SceneDirector.h"
 
-SceneDirector* SceneDirector::pInstance = NULL;
+SceneDirector* SceneDirector::pInstance = NULL; 
 
 SceneDirector::SceneDirector()
 {

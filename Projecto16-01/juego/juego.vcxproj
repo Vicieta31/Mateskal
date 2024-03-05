@@ -142,17 +142,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AudioChunker.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="mainTestScenes.cpp" />
     <ClCompile Include="SceneDirector.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="VideoManager.cpp" />
+    <ClCompile Include="XMLReader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AudioChunker.h" />
+    <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneDirector.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="VideoManager.h" />
+    <ClInclude Include="XMLReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
