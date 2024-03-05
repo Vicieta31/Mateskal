@@ -41,9 +41,6 @@ public:
 	SDL_Window* gWindow;
 	SDL_Renderer* gRenderer;
 
-	int SCREEN_WIDTH;
-	int SCREEN_HEIGHT;
-
 	/*
 		\return Instance of VideoManager (Singleton).
 	*/
