@@ -32,14 +32,29 @@ public:
 
 	~InputManager();
 
+	/*
+		Reads inputs, meant to be used in the Game Loop.
+	*/
 	void Update();
 
+	/*
+		Returns the Direction the player is currently moving as an Int.
+	*/
 	int GetDirection() { return pDirection; };
 
+	/*
+		Returns if the game is paused in a bool.
+	*/
 	bool GetPause() { return pPause; };
 
+	/*
+		Returns the Direction the player is currently shooting as an Int.
+	*/
 	int GetShot() { return pShot; };
 
+	/*
+		\return Instance of InputManager (Singleton).
+	*/
 	static InputManager* getInstance() {
 
 		if (pInstance == NULL) {
