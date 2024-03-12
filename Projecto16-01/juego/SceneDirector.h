@@ -5,9 +5,9 @@
 #include <vector>
 #include "Scene.h"
 
-enum sceNum { MainMenu, GameLevels, HighScores };
+enum sceNum { MainMenu, GameLevels, HighScores, _LASTSCENE };
 
-
+#define NUM_SCENES _LASTSCENE
 
 class SceneDirector
 {
