@@ -1,0 +1,24 @@
+﻿  AudioChunker.cpp
+  AudioManager.cpp
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\AudioManager.cpp(77,20): warning C4018: '<': no coinciden signed/unsigned
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\AudioManager.cpp(118,10): warning C4018: '>': no coinciden signed/unsigned
+  Character.cpp
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\Character.cpp(34,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\Character.cpp(34,57): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  InputManager.cpp
+  ResourceManager.cpp
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\ResourceManager.cpp(93,20): warning C4018: '<': no coinciden signed/unsigned
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\ResourceManager.cpp(134,10): warning C4018: '>': no coinciden signed/unsigned
+  mainTestScenes.cpp
+  Scene.cpp
+  SceneDirector.cpp
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\SceneDirector.cpp(13,65): error C2572: "SceneDirector::ChangeScene": nueva definición de argumento predeterminado: parámetro 1
+  C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\SceneDirector.h(27,7):
+  vea la declaración de 'SceneDirector::ChangeScene'
+  
+  SoundManager.cpp
+  tinyxml2.cpp
+  VideoManager.cpp
+  XMLReader.cpp
+C:\DANI\M03-Programacion\TrabajoFinal\Mateskal\Projecto16-01\juego\XMLReader.cpp(86,20): warning C4018: '<': no coinciden signed/unsigned
+  Generando código...

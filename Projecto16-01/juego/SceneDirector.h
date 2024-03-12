@@ -2,7 +2,12 @@
 #include <SDL.h>
 #include "InputManager.h"
 
-enum scene { MainMenu, GameLevels, HighScores };
+#include <vector>
+#include "Scene.h"
+
+enum sceNum { MainMenu, GameLevels, HighScores };
+
+
 
 class SceneDirector
 {
@@ -13,15 +18,13 @@ private:
 	/*
 		Cosas para cambiar la escena jej
 	*/
-	void ChangeScene();
-
-	static SceneDirector* pInstance;
-
 	
 public:
 	~SceneDirector();
 
-	void Update(int placeHolder);
+	void init();
+
+	void ChangeScene(sceNum nextScene, bool reinit = true);
 
 	/*
 		Returns actual Scene
@@ -41,5 +44,9 @@ public:
 	};
 protected:
 	SceneDirector();
+	static SceneDirector* pInstance;
+
+	std::vector<Scene*>	mVectorScene;
+	sceNum mCurrentScene;
 };
 

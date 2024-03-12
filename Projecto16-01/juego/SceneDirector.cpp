@@ -11,8 +11,11 @@ SceneDirector::~SceneDirector()
 {
 }
 
-void SceneDirector::ChangeScene()
+void SceneDirector::ChangeScene(sceNum nextScene, bool reinit = true)
 {
+	mVectorScene[nextScene]->setReInit(reinit);
+	mCurrentScene = nextScene;
+
 	if (_placeHolder == 1)
 	{
 		scene = MainMenu;
@@ -31,11 +34,4 @@ void SceneDirector::ChangeScene()
 			scene = HighScores;
 		}
 	}
-}
-
-void SceneDirector::Update(int placeHolder)
-{
-	_placeHolder = placeHolder;
-
-	ChangeScene();
 }

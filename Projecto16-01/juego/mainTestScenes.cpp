@@ -21,7 +21,7 @@ int main(int argc, char* args[])
 
 		direccion = InputManager::getInstance()->GetDirection();
 
-		SceneDirector::getInstance()->Update(direccion);
+		//SceneDirector::getInstance()->ChangeScene();
 		escena = SceneDirector::getInstance()->GetScene();
 		//cout << direccion;
 
