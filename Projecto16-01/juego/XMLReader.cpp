@@ -28,6 +28,7 @@ bool XMLReader::CheckLoad(std::string FilePath)
 		std::cout << "Error XML: " << Level.ErrorStr();
 		Return = false;
 	}
+	lTiles.SourceImage = FilePath.c_str();
 	return Return;
 
 }
@@ -43,20 +44,14 @@ void XMLReader::BasicTileData()
 	lTiles.Spacing = std::stoi(element->Attribute("spacing"));
 	lTiles.Columns = std::stoi(element->Attribute("columns"));
 
-	tinyxml2::XMLElement* image = element->FirstChildElement();
-	lTiles.SourceImage = image->Attribute("source");
-
 }
 
 void XMLReader::LevelWidthHeight() 
 {
 
 	tinyxml2::XMLElement* root = Level.FirstChildElement();
-	tinyxml2::XMLElement* element = root->FirstChildElement();
-	element = element->NextSiblingElement();
-	element = element->NextSiblingElement();
-	int lWidth = std::stoi(element->Attribute("width"));
-	int lHeight = std::stoi(element->Attribute("height"));
+	lWidth = std::stoi(root->Attribute("width"));
+	lHeight = std::stoi(root->Attribute("height"));
 
 }
 

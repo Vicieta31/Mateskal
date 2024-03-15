@@ -2,22 +2,7 @@
 #include <string>
 #include <vector>
 #include "tinyxml2.h"
-
-struct Tileset {
-
-	int tCount;
-
-	int tWidth;
-
-	int tHeight;
-
-	int Spacing;
-
-	int Columns;
-
-	std::string SourceImage;
-
-};
+#include "XMLDefs.h"
 
 class XMLReader
 {
@@ -33,6 +18,8 @@ private:
 	int lHeight;
 
 	std::vector<int> LevelTiles;
+
+	std::string Folders;
 
 	/*
 		To check if Level XML is loaded correctly.
@@ -76,7 +63,9 @@ public:
 		\param Position Position of the tile in the array.
 		\return ID of the tile in Int.
 	*/
-	int GetLevelTileID(int Position) { return LevelTiles[Position]; };
+	int GetLevelTileID(int Position) { 
+		return LevelTiles[Position]; 
+	};
 
 	//Returns how many tiles tall the level is.
 	int GetLevelHeight() { return lHeight; };
