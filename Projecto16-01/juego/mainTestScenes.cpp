@@ -14,8 +14,8 @@ int main(int argc, char* args[])
 	VideoManager::getInstance();
 
 	SceneDirector::getInstance();
-
-	while (true)
+	bool contrue = false;
+	while (contrue == false)
 	{
 		InputManager::getInstance()->Update();
 
@@ -23,6 +23,7 @@ int main(int argc, char* args[])
 
 		SceneDirector::getInstance()->Update(direccion);
 		escena = SceneDirector::getInstance()->GetScene();
+		contrue = InputManager::getInstance()->GetPause();
 		//cout << direccion;
 
 		//los siguientes if se cambiaran dentro de SceneDirector dependiendo de como se cambie de escena

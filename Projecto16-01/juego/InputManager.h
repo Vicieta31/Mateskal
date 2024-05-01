@@ -61,8 +61,6 @@ public:
 		}
 
 		return pInstance;
-
 	};
-
 };
 

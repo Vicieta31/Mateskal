@@ -1,6 +1,6 @@
 #include "AudioManager.h"
 #include "SDL_mixer.h"
-#include <iostream>
+
 
 AudioManager* AudioManager::pInstance = NULL;
 
@@ -127,11 +127,8 @@ std::string AudioManager::getSoundPathByID(Sint32 ID)
 			if (Iterator->second == ID) {
 
 				Return = Iterator->first;
-
 			}
-
 		}
-
 	}
 
 	return Return;

@@ -1,6 +1,5 @@
 #include "ResourceManager.h"
 #include "SDL_image.h"
-#include "VideoManager.h"
 #include <iostream>
 
 ResourceManager* ResourceManager::pInstance = NULL;

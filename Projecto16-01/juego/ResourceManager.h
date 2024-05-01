@@ -4,6 +4,8 @@
 #include <map>
 #include <vector>
 #include <string>
+
+#include "VideoManager.h"
 #include "SDL.h"
 
 //! ResourceManager class
