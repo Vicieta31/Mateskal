@@ -66,6 +66,9 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>Source Files\scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyxml2.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Header Files\scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

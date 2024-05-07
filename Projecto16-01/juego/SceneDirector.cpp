@@ -5,7 +5,7 @@ SceneDirector* SceneDirector::pInstance = NULL;
 SceneDirector::SceneDirector()
 {
 	_placeHolder = 0;
-	scene = MainMenu;
+	actScene = MainMenu;
 }
 SceneDirector::~SceneDirector()
 {
@@ -15,20 +15,20 @@ void SceneDirector::ChangeScene()
 {
 	if (_placeHolder == 1)
 	{
-		scene = MainMenu;
+		actScene = MainMenu;
 	}
 	if (_placeHolder == 3)
 	{
-		if (scene == MainMenu)
+		if (actScene == MainMenu)
 		{
-			scene = GameLevels;
+			actScene = GameLevels;
 		}
 	}
 	if (_placeHolder == 5)
 	{
-		if (scene == MainMenu)
+		if (actScene == MainMenu)
 		{
-			scene = HighScores;
+			actScene = HighScores;
 		}
 	}
 }

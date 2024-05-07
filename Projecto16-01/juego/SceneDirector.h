@@ -1,32 +1,33 @@
 #pragma once
 #include <SDL.h>
+#include <vector>
+
 #include "InputManager.h"
 
+//! Enum scenes.
+/*! All the Scenes in game. */
+// Main menu, nivel, puntuaciones
 enum scene { MainMenu, GameLevels, HighScores };
 
 class SceneDirector
 {
-private:
-	int scene;
-	int _placeHolder;
-
-	/*
-		Cosas para cambiar la escena jej
-	*/
-	void ChangeScene();
-
-	static SceneDirector* pInstance;
-
-	
 public:
 	~SceneDirector();
+
+	void init();
+
+	void changeScene(scene nextScene, bool reinit = true);
+
+	scene getCurrentSceneEnum() { return actScene; };
+
+	// escena base get curren scene
 
 	void Update(int placeHolder);
 
 	/*
 		Returns actual Scene
 	*/
-	int GetScene() { return scene; };
+	int GetScene() { return actScene; };
 
 	/*
 		\return Instance of SceneDirector (Singleton).
@@ -41,5 +42,18 @@ public:
 	};
 protected:
 	SceneDirector();
+	scene actScene;
+	static SceneDirector* pInstance;
+
+private:
+	int _placeHolder;
+
+	/*
+		Cosas para cambiar la escena jej
+	*/
+	void ChangeScene();
+
+
+	
 };
 
