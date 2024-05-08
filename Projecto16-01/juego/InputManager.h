@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL.h>
-enum Directions { dNEUTRAL, dUP, dUPRIGHT, dRIGHT, dDOWNRIGHT, dDOWN, dDOWNLEFT, dLEFT, dUPLEFT };
+#include "Glboals.h"
 
 class InputManager
 {

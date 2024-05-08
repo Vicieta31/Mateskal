@@ -150,6 +150,7 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="mainTestScenes.cpp" />
     <ClCompile Include="SceneDirector.cpp" />
+    <ClCompile Include="SceneMainMenu.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="VideoManager.cpp" />
@@ -160,9 +161,11 @@
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Glboals.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneDirector.h" />
+    <ClInclude Include="SceneMainMenu.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="VideoManager.h" />

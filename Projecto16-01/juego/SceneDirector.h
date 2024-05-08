@@ -3,11 +3,14 @@
 #include <vector>
 
 #include "InputManager.h"
+#include "BaseScene.h"
 
 //! Enum scenes.
 /*! All the Scenes in game. */
 // Main menu, nivel, puntuaciones
-enum scene { MainMenu, GameLevels, HighScores };
+enum scene { MainMenu, GameLevels, HighScores, _LastScene };
+
+#define NUM_SCENES _LastScene
 
 class SceneDirector
 {
@@ -21,8 +24,7 @@ public:
 	scene getCurrentSceneEnum() { return actScene; };
 
 	// escena base get curren scene
-
-	void Update(int placeHolder);
+	BaseScene* getCurrentScene() { return mVectorScenes[actScene]; };
 
 	/*
 		Returns actual Scene
@@ -40,20 +42,16 @@ public:
 
 		return pInstance;
 	};
+
 protected:
 	SceneDirector();
 	scene actScene;
+	std::vector<BaseScene*>	mVectorScenes;
+
 	static SceneDirector* pInstance;
 
 private:
 	int _placeHolder;
-
-	/*
-		Cosas para cambiar la escena jej
-	*/
-	void ChangeScene();
-
-
-	
+		
 };
 
