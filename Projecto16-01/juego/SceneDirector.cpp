@@ -1,5 +1,6 @@
 #include "SceneDirector.h"
 #include "SceneMainMenu.h"
+#include <iostream>
 
 SceneDirector* SceneDirector::pInstance = NULL; 
 
@@ -7,6 +8,7 @@ SceneDirector::SceneDirector()
 {
 	_placeHolder = 0;
 	actScene = MainMenu;
+	init();
 }
 SceneDirector::~SceneDirector()
 {
@@ -18,7 +20,7 @@ void SceneDirector::init()
 
 	SceneMainMenu* mainS = new SceneMainMenu();
 
-	mVectorScenes[MainMenu] = mainS;
+	mVectorScenes[MainMenu] = mainS; 
 
 	mainS->init();
 	
@@ -30,4 +32,10 @@ void SceneDirector::changeScene(scene nextScene, bool reinit)
 {
 	mVectorScenes[nextScene]->setReInit(reinit);
 	actScene = nextScene;
+}
+
+BaseScene* SceneDirector::getCurrentScene()
+{
+	std::cout << mVectorScenes[actScene];
+	return mVectorScenes[actScene];
 }

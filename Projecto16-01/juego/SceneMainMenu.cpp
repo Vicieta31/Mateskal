@@ -12,7 +12,8 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::init()
 {
-	backgroundImage = ResourceManager::getInstance()->loadAndGetGraphicID("../TestResources/Bliss.png", 0);
+	backgroundImage = ResourceManager::getInstance()->loadAndGetGraphicID("../TestResources/Bliss.png", 1);
+	mReinit = false;
 }
 
 void SceneMainMenu::update()
@@ -37,5 +38,5 @@ void SceneMainMenu::update()
 void SceneMainMenu::render()
 {
 	std::cout << option << "\n";
-	VideoManager::getInstance()->renderGraphic(backgroundImage, 0, 0, ScreenWidth, ScreenHeight);
+	VideoManager::getInstance()->renderGraphic(backgroundImage, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 }

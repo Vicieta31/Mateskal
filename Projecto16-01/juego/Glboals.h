@@ -1,4 +1,5 @@
 #pragma once
 enum Directions { dNEUTRAL, dUP, dUPRIGHT, dRIGHT, dDOWNRIGHT, dDOWN, dDOWNLEFT, dLEFT, dUPLEFT };
-int ScreenWidth = 1080;
-int ScreenHeight = 720;
+
+const int SCREEN_WIDTH = 1080;
+const int SCREEN_HEIGHT = 720;

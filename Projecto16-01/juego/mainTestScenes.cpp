@@ -2,45 +2,40 @@
 #include "ResourceManager.h"
 #include "InputManager.h"
 #include "SceneDirector.h"
+#include "SoundManager.h"
+#include <string>
 
 #include <iostream>
 
 using namespace std;
 
+Uint32 global_elapsed_time = 0;
+bool playing = true;
+SceneDirector* sDirector = NULL;
+SoundManager* sManager = NULL;
+InputManager* kManager = NULL;
+ResourceManager* rManager = NULL;
+
 int main(int argc, char* args[]) 
 {
-	int direccion = 0;
-	int escena = MainMenu;
-
+	// INIT todos los manager directors
 	VideoManager::getInstance();
+	sDirector = SceneDirector::getInstance();
+	sManager = SoundManager::getInstance();
+	kManager = InputManager::getInstance();
+	rManager = ResourceManager::getInstance();
 
-	SceneDirector::getInstance();
-	bool contrue = false;
-	while (contrue == false)
+	while (playing == true)
 	{
-		InputManager::getInstance()->Update();
-
-		direccion = InputManager::getInstance()->GetDirection();
-
-		SceneDirector::getInstance()->Update(direccion);
-		escena = SceneDirector::getInstance()->GetScene();
-		contrue = InputManager::getInstance()->GetPause();
-		//cout << direccion;
-
-		//los siguientes if se cambiaran dentro de SceneDirector dependiendo de como se cambie de escena
-		
-		if (escena == MainMenu)
-		{
-			cout << "MainMenu" << endl;
+		if (sDirector->getCurrentScene()->mustReInit()) {
+			sDirector->getCurrentScene()->init();
 		}
-		if (escena == GameLevels)
-		{
-			cout << "GameLevels" << endl;
-		}
-		if (escena == HighScores)
-		{
-			cout << "HighScores" << endl;
-		}
+		// kManager->update();
+		// Updates scene
+		sDirector->getCurrentScene()->update();
+
+		sDirector->getCurrentScene()->render();
+		VideoManager::getInstance()->updateScreen();
 	}
 	 
 	return 0;

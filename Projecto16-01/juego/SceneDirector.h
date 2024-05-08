@@ -5,6 +5,7 @@
 #include "InputManager.h"
 #include "BaseScene.h"
 
+
 //! Enum scenes.
 /*! All the Scenes in game. */
 // Main menu, nivel, puntuaciones
@@ -24,7 +25,7 @@ public:
 	scene getCurrentSceneEnum() { return actScene; };
 
 	// escena base get curren scene
-	BaseScene* getCurrentScene() { return mVectorScenes[actScene]; };
+	BaseScene* getCurrentScene();
 
 	/*
 		Returns actual Scene
@@ -45,7 +46,9 @@ public:
 
 protected:
 	SceneDirector();
+
 	scene actScene;
+
 	std::vector<BaseScene*>	mVectorScenes;
 
 	static SceneDirector* pInstance;
