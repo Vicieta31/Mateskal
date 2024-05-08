@@ -10,7 +10,7 @@ Character::Character()
 	_dir = 0;
 	_disp = 0;
 
-	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
+	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg");
 
 	_posX = 0;
 	_posY = 0;

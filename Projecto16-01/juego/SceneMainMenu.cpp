@@ -12,7 +12,7 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::init()
 {
-	backgroundImage = ResourceManager::getInstance()->loadAndGetGraphicID("../TestResources/Bliss.png", 1);
+	backgroundImage = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Bliss.png");
 	mReinit = false;
 }
 

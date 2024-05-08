@@ -1,12 +1,12 @@
+#pragma once
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
 #include <map>
 #include <vector>
 #include <string>
-
-#include "VideoManager.h"
 #include "SDL.h"
+#include "SDL_image.h"
 
 //! ResourceManager class
 /*!
@@ -17,7 +17,7 @@ class ResourceManager
 public:
 
 	//! Destructor.
-	~ResourceManager();
+	~ResourceManager(void);
 
 	//! Deletes a graphic from the ResourceManager map
 	/*!
@@ -31,7 +31,7 @@ public:
 		\param file Filepath to the graphic
 		\return ID of the graphic
 	*/
-	Sint32 loadAndGetGraphicID(const char* file, int AlphMod);
+	Sint32 loadAndGetGraphicID(const char* file);
 
 
 	//! Gets the graphic path given an ID graphic
@@ -94,19 +94,18 @@ public:
 	/*!
 		\return Instance of ResourceManager (Singleton).
 	*/
-	static ResourceManager* getInstance() {
-	
-		if (pInstance == NULL) {
-			pInstance = new ResourceManager;
+	static ResourceManager* getInstance()
+	{
+		if (pInstance == NULL)
+		{
+			pInstance = new ResourceManager();
 		}
-
 		return pInstance;
-	
-	};
+	}
 
 protected:
 	//! Constructor of an empty ResourceManager.
-	ResourceManager();
+	ResourceManager(void);
 
 private:
 
@@ -115,7 +114,7 @@ private:
 		\param file Filepath to the graphic
 		\return -1 if there's an error when loading
 	*/
-	Sint32 addGraphic(const char* file, int AlphMod);
+	Sint32 addGraphic(const char* file);
 
 	//! Searches the first NULL in mGraphicsVector and updates mFirstFreeSlot to store its position
 	/*!
