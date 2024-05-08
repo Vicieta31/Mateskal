@@ -1,7 +1,10 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
+
 #include "Character.h"
+#include "Enemy.h"
+
 #include <iostream>
 
 using namespace std;
@@ -17,8 +20,10 @@ int main(int argc, char* args[])
 	ResourceManager::getInstance()->printLoadedGraphics();
 
 	Character character;
+	Enemy enemy;
 
 	character.Init();
+	enemy.Init();
 
 	while (true)
 	{
@@ -31,13 +36,15 @@ int main(int argc, char* args[])
 		cout << disp;
 
 		character.Update(direccion, disp);
+		enemy.Update(character.GetPosX(), character.GetPosY()); // Pasa posicion character ha enemy
 
 		VideoManager::getInstance()->renderGraphic(Pantalla1, 0, 0, 1080, 720);
 
 		character.Render();
+		enemy.Render();
 
 		VideoManager::getInstance()->updateScreen();
 	}
-	 
+	
 	return 0;
 }
