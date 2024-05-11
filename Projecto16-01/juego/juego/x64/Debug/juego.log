@@ -1,0 +1,47 @@
+﻿  AudioChunker.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\AudioManager.h(7,10): error C1083: No se puede abrir el archivo incluir: 'SDL_mixer.h': No such file or directory
+  (compilando archivo de origen "AudioChunker.cpp")
+  
+  AudioManager.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\AudioManager.h(7,10): error C1083: No se puede abrir el archivo incluir: 'SDL_mixer.h': No such file or directory
+  (compilando archivo de origen "AudioManager.cpp")
+  
+  Character.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\VideoManager.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "Character.cpp")
+  
+  Enemy.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\VideoManager.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "Enemy.cpp")
+  
+  InputManager.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\InputManager.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "InputManager.cpp")
+  
+  mainTestCharacter.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\VideoManager.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "mainTestCharacter.cpp")
+  
+  ResourceManager.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\ResourceManager.h(7,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "ResourceManager.cpp")
+  
+  mainTestScenes.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\VideoManager.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "mainTestScenes.cpp")
+  
+  SceneDirector.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\SceneDirector.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "SceneDirector.cpp")
+  
+  SoundManager.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\SoundManager.h(3,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "SoundManager.cpp")
+  
+  tinyxml2.cpp
+  VideoManager.cpp
+C:\Users\User\Desktop\gauntlet\Mateskal\Projecto16-01\juego\VideoManager.h(2,10): error C1083: No se puede abrir el archivo incluir: 'SDL.h': No such file or directory
+  (compilando archivo de origen "VideoManager.cpp")
+  
+  XMLReader.cpp
+  Generando código...
