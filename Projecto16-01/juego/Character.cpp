@@ -1,6 +1,7 @@
-#include <iostream>
-
 #include "Character.h"
+#include "Enemy.h"
+
+#include <iostream>
 
 #include "VideoManager.h"
 #include "ResourceManager.h"
@@ -13,6 +14,8 @@ Character::Character()
 
 	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
 	_bullet = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
+
+	_health = 10;
 
 	_posX = 10;
 	_posY = 10;
@@ -51,6 +54,27 @@ void Character::Render()
 	for (int i = 0; i < _bullets.size(); ++i) {
 		const Bullet& bullet = _bullets[i];
 		VideoManager::getInstance()->renderGraphic(_bullet, bullet.posbX, bullet.posbY, 10, 10);
+	}
+}
+
+void Character::ReduceHealth()
+{
+	_health -= 1; // Reducir la salud del personaje en 1
+	if (_health <= 0) {
+		// El personaje ha perdido todas sus vidas
+	}
+}
+
+void Character::CheckBulletCollision(Enemy& enemy)
+{
+	for (int i = 0; i < _bullets.size(); ++i) {
+		const Bullet& bullet = _bullets[i];
+		float distance = enemy.CalculateDistance(bullet.posbX, bullet.posbY, enemy.GetPosX() + 25, enemy.GetPosY() + 25);
+		if (distance < 40) { // radio de colisión del enemigo
+			enemy.ReduceHealth();
+			_bullets.erase(_bullets.begin() + i);
+			i--;
+		}
 	}
 }
 
@@ -179,11 +203,5 @@ void Character::Shot() {
 			_bullets.erase(_bullets.begin() + i);
 			i--; // Ajustar el índice después de borrar un elemento
 		}
-
-		// Eliminar balas fuera de los límites del mapa
-		/*if (bullet.posbX < 0 || bullet.posbX > 1080 || bullet.posbY < 0 || bullet.posbY > 720) {
-			_bullets.erase(_bullets.begin() + i);
-			i--;
-		}*/
 	}
 }

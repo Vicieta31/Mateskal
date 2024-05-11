@@ -6,12 +6,14 @@
 #include "Enemy.h"
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
 int main(int argc, char* args[]) 
 {
-	
+	srand(time(NULL));
 	int direccion = 0;
 	int disp = 0;
 
@@ -20,9 +22,11 @@ int main(int argc, char* args[])
 	ResourceManager::getInstance()->printLoadedGraphics();
 
 	Character character;
+	character.Init();
+
 	Enemy enemy;
 
-	character.Init();
+	
 	enemy.Init();
 
 	while (true)
@@ -37,6 +41,9 @@ int main(int argc, char* args[])
 
 		character.Update(direccion, disp);
 		enemy.Update(character.GetPosX(), character.GetPosY()); // Pasa posicion character ha enemy
+
+		character.CheckBulletCollision(enemy);
+		enemy.CheckCharacterCollision(character);
 
 		VideoManager::getInstance()->renderGraphic(Pantalla1, 0, 0, 1080, 720);
 
