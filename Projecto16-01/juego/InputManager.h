@@ -27,6 +27,8 @@ private:
 	bool sDown;
 	bool sLeft;
 
+	bool kEnter;
+
 public:
 
 	~InputManager();
@@ -45,11 +47,14 @@ public:
 		Returns if the game is paused in a bool.
 	*/
 	bool GetPause() { return pPause; };
+	void SetPause() { pPause = true; };
 
 	/*
 		Returns the Direction the player is currently shooting as an Int.
 	*/
 	int GetShot() { return pShot; };
+
+	bool GetEnter() { return kEnter; };
 
 	/*
 		\return Instance of InputManager (Singleton).

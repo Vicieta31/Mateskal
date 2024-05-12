@@ -19,20 +19,40 @@ void SceneMainMenu::init()
 void SceneMainMenu::update()
 {
 	int dir = InputManager::getInstance()->GetDirection();
+
+	bool enter = InputManager::getInstance()->GetEnter();
+
+	if (enter == true)
+	{
+		if (option == 0)
+		{
+			std::cout << "Escena " << option << "\n";
+			SceneDirector::getInstance()->changeScene(GameLevels);
+		}
+		if (option == 1)
+		{
+			std::cout << "Escena " << option << "\n";
+		}
+		if (option == 2)
+		{
+			std::cout << "Exit " << option << "\n";
+			InputManager::getInstance()->SetPause();
+		}
+	}
+
 	if (dir == dLEFT)
 	{
-		if (option > 0)
-		{
-			option--;
-		}
+		option = 0;
 	}
 	if (dir == dRIGHT)
 	{
-		if (option < 3)
-		{
-			option++;
-		}
+		option = 1;
 	}
+	if (dir == dUP)
+	{
+		option = 2;
+	}
+
 }
 
 void SceneMainMenu::render()

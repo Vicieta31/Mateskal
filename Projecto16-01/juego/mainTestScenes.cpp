@@ -32,7 +32,12 @@ int main(int argc, char* args[])
 		}
 		// kManager->update();
 		// Updates scene
+		kManager->Update();
 		sDirector->getCurrentScene()->update();
+		if (kManager->GetPause())
+		{
+			playing = false;
+		}
 
 		sDirector->getCurrentScene()->render();
 		VideoManager::getInstance()->updateScreen();

@@ -21,6 +21,7 @@ InputManager::InputManager()
 	sRight = false;
 	sDown = false;
 	sLeft = false;
+	kEnter = false;
 
 }
 
@@ -65,6 +66,9 @@ void InputManager::Update()
 					case SDL_SCANCODE_ESCAPE:
 						pPause = true;
 						break;
+					case SDL_SCANCODE_SPACE:
+						kEnter = true;
+						break;
 				}
 				break;
 
@@ -97,6 +101,9 @@ void InputManager::Update()
 						break;
 					case SDL_SCANCODE_ESCAPE:
 						pPause = false;
+						break;
+					case SDL_SCANCODE_SPACE:
+						kEnter = false;
 						break;
 					}
 				break;
