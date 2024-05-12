@@ -23,6 +23,8 @@ private:
 
     int _health;
 
+    bool _estaVivo;
+
     float _posX;
     float _posY;
 
@@ -47,7 +49,6 @@ public:
     void Render();
 
     void CheckBulletCollision(Enemy& enemy);
-
     void ReduceHealth(); // Cuando recibe daño
 
     float GetPosX() const { return _posX; } // Obtener la posición X del personaje

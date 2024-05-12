@@ -12,10 +12,12 @@ Character::Character()
 	_dir = 0;
 	_disp = 0;
 
-	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
+	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/gato.png", 1);
 	_bullet = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
 
 	_health = 10;
+
+	_estaVivo = true;
 
 	_posX = 10;
 	_posY = 10;
@@ -62,6 +64,7 @@ void Character::ReduceHealth()
 	_health -= 1; // Reducir la salud del personaje en 1
 	if (_health <= 0) {
 		// El personaje ha perdido todas sus vidas
+		_estaVivo = false;
 	}
 }
 

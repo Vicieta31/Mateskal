@@ -6,12 +6,13 @@
 #include "Enemy.h"
 
 #include <iostream>
+#include <vector>
 #include <stdlib.h>
 #include <time.h>
 
 using namespace std;
 
-int main(int argc, char* args[]) 
+int main(int argc, char* args[])
 {
 	srand(time(NULL));
 	int direccion = 0;
@@ -24,10 +25,12 @@ int main(int argc, char* args[])
 	Character character;
 	character.Init();
 
-	Enemy enemy;
+	vector<Enemy*> enemies; // Vector dinámico de enemigos
 
-	
-	enemy.Init();
+	// Crear enemigos y añadirlos al vector
+	for (int i = 0; i < 5; ++i) {
+		enemies.push_back(Enemy::CreateEnemy());
+	}
 
 	while (true)
 	{
@@ -40,18 +43,38 @@ int main(int argc, char* args[])
 		cout << disp;
 
 		character.Update(direccion, disp);
-		enemy.Update(character.GetPosX(), character.GetPosY()); // Pasa posicion character ha enemy
 
-		character.CheckBulletCollision(enemy);
-		enemy.CheckCharacterCollision(character);
+		// Actualizar cada enemigo
+		for (auto& enemy : enemies) {
+			enemy->Update(character.GetPosX(), character.GetPosY());
+			character.CheckBulletCollision(*enemy);
+			enemy->CheckCharacterCollision(character);
+		}
+
+		// Eliminar enemigos muertos
+		enemies.erase(remove_if(enemies.begin(), enemies.end(), [](Enemy* enemy) {
+			if (enemy->GetHealth() <= 0) {
+				delete enemy;
+				return true;
+			}
+			return false;
+			}), enemies.end());
 
 		VideoManager::getInstance()->renderGraphic(Pantalla1, 0, 0, 1080, 720);
 
 		character.Render();
-		enemy.Render();
+		for (auto& enemy : enemies) {
+			enemy->Render();
+		}
 
 		VideoManager::getInstance()->updateScreen();
 	}
-	
+
+	// Limpiar memoria al finalizar
+	for (auto& enemy : enemies) {
+		delete enemy;
+	}
+	enemies.clear();
+
 	return 0;
 }

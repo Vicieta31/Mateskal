@@ -9,7 +9,7 @@
 
 Enemy::Enemy()
 {
-	_enemy = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
+	_enemy = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.png", 1);
 
 	_health = 5;
 
@@ -33,7 +33,7 @@ void Enemy::Update(float characterPosX, float characterPosY)
 	float distance = CalculateDistance(_posX, _posY, characterPosX, characterPosY);
 
 	// Define el umbral de distancia para comenzar a perseguir al personaje
-	float chaseDistance = 500.0f;
+	float chaseDistance = 400.0f;
 
 	// Si la distancia es menor que el umbral, mueve al enemigo hacia el personaje
 	if (distance < chaseDistance) {
@@ -85,4 +85,14 @@ void Enemy::MoveTowards(float targetX, float targetY)
 	// Mueve al enemigo hacia el personaje
 	_posX += dirX * vEnemy;
 	_posY += dirY * vEnemy;
+}
+
+Enemy* Enemy::CreateEnemy()
+{
+	//Crear nuevo enemigo dinamicamente
+	Enemy* newEnemy = new Enemy();
+	newEnemy->_posX = rand() % 999;
+	newEnemy->_posY = rand() % 639;
+	newEnemy->_health = 5;
+	return newEnemy;
 }
