@@ -4,6 +4,11 @@
 #include <time.h>
 #include "Character.h"
 
+struct Position {
+    float x;
+    float y;
+};
+
 class Enemy
 {
 private:
@@ -37,4 +42,3 @@ public:
 
     int GetHealth() const { return _health; } // Obtener la vida del enemigo
 };
-

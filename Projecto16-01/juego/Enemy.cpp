@@ -89,10 +89,29 @@ void Enemy::MoveTowards(float targetX, float targetY)
 
 Enemy* Enemy::CreateEnemy()
 {
-	//Crear nuevo enemigo dinamicamente
+	// Crear nuevo enemigo dinámicamente
 	Enemy* newEnemy = new Enemy();
-	newEnemy->_posX = rand() % 999;
-	newEnemy->_posY = rand() % 639;
+
+	// Definir posiciones
+	static const Position enemyPositions[] = {
+		{800, 500},   // Pos 1
+		{600, 200},   // Pos 2
+		{500, 400},   // Pos 3
+		{700, 300},   // Pos 4
+		{900, 100}    // Pos 5
+	};
+
+	// Vector para mantener las posiciones disponibles
+	static std::vector<Position> availablePositions(enemyPositions, enemyPositions + sizeof(enemyPositions) / sizeof(enemyPositions[0]));
+
+	// Seleccionar una posición aleatoria para el nuevo enemigo
+	int randomIndex = rand() % availablePositions.size();
+	newEnemy->_posX = availablePositions[randomIndex].x;
+	newEnemy->_posY = availablePositions[randomIndex].y;
+
+	// Eliminar la posición seleccionada de las disponibles
+	availablePositions.erase(availablePositions.begin() + randomIndex);
+
 	newEnemy->_health = 5;
 	return newEnemy;
 }

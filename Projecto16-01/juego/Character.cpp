@@ -35,8 +35,8 @@ void Character::Init()
 
 void Character::Update(int dir, int shot)
 {
-	_dir = dir;
-	_disp = shot;
+	_disp = dir;
+	_dir = shot;
 
 	Move();
 	Shot();
