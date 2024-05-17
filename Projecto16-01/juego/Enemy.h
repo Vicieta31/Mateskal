@@ -29,7 +29,7 @@ public:
     void Update(float characterPosX, float characterPosY); // Se pasan las posiciones del personaje
     void Render();
 
-    void CheckCharacterCollision(Character& character);
+    void CheckCharacterCollisionE(Character& character);
     void ReduceHealth(); // Cuando recibe daño
 
     float CalculateDistance(float x1, float y1, float x2, float y2); // Calcular la distancia entre dos puntos

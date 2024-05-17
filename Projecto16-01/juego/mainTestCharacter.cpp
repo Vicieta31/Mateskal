@@ -1,7 +1,7 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
-
+#include "CambioNivel.h"
 #include "Character.h"
 #include "Enemy.h"
 
@@ -21,6 +21,9 @@ int main(int argc, char* args[])
 	int Pantalla1 = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Pantalla1.jpg", 1);
 
 	ResourceManager::getInstance()->printLoadedGraphics();
+
+	CambioNivel cambioNivel;
+	cambioNivel.Init();
 
 	Character character;
 	character.Init();
@@ -44,11 +47,13 @@ int main(int argc, char* args[])
 
 		character.Update(direccion, disp);
 
+		cambioNivel.CheckCharacterCollisionL(character); // Devuelve true o false
+
 		// Actualizar cada enemigo
 		for (auto& enemy : enemies) {
 			enemy->Update(character.GetPosX(), character.GetPosY());
 			character.CheckBulletCollision(*enemy);
-			enemy->CheckCharacterCollision(character);
+			enemy->CheckCharacterCollisionE(character);
 		}
 
 		// Eliminar enemigos muertos
@@ -62,7 +67,9 @@ int main(int argc, char* args[])
 
 		VideoManager::getInstance()->renderGraphic(Pantalla1, 0, 0, 1080, 720);
 
+		cambioNivel.Render();
 		character.Render();
+
 		for (auto& enemy : enemies) {
 			enemy->Render();
 		}

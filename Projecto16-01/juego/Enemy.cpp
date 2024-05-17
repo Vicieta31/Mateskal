@@ -47,7 +47,7 @@ void Enemy::Render()
 	VideoManager::getInstance()->renderGraphic(_enemy, _posX, _posY, 80, 80);
 }
 
-void Enemy::CheckCharacterCollision(Character& character)
+void Enemy::CheckCharacterCollisionE(Character& character)
 {
 	float distance = CalculateDistance(_posX, _posY, character.GetPosX(), character.GetPosY());
 	if (distance < 40) { // Radio de colisión del personaje
