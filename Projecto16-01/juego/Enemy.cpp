@@ -9,7 +9,7 @@
 
 Enemy::Enemy()
 {
-	_enemy = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.png", 1);
+	_enemy = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/enemigo.png", 1);
 
 	_health = 5;
 

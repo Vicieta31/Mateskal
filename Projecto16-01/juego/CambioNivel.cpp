@@ -8,7 +8,7 @@
 
 CambioNivel::CambioNivel()
 {
-	_cambioNivel = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/gato.png", 1);
+	_cambioNivel = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puerta.png", 1);
 
 	_posX = 500;
 	_posY = 500;

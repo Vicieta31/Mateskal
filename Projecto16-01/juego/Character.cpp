@@ -12,8 +12,8 @@ Character::Character()
 	_dir = 0;
 	_disp = 0;
 
-	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/gato.png", 1);
-	_bullet = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puke.jpeg", 1);
+	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/jugador.png", 1);
+	_bullet = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/bala.png", 1);
 
 	_health = 10;
 
@@ -55,7 +55,7 @@ void Character::Render()
 	// Render bullets
 	for (int i = 0; i < _bullets.size(); ++i) {
 		const Bullet& bullet = _bullets[i];
-		VideoManager::getInstance()->renderGraphic(_bullet, bullet.posbX, bullet.posbY, 10, 10);
+		VideoManager::getInstance()->renderGraphic(_bullet, bullet.posbX, bullet.posbY, 20, 20);
 	}
 }
 
