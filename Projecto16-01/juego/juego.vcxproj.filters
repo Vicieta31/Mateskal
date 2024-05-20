@@ -36,12 +36,6 @@
     <ClCompile Include="mainTestScenes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tinyxml2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="XMLReader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AudioManager.cpp">
       <Filter>Source Files\motor</Filter>
     </ClCompile>
@@ -75,14 +69,17 @@
     <ClCompile Include="SceneGame.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Tileset.cpp">
+      <Filter>Source Files\motor</Filter>
+    </ClCompile>
+    <ClCompile Include="CargarMapas.cpp">
+      <Filter>Source Files\motor</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tinyxml2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="XMLReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AudioChunker.h">
       <Filter>Header Files\motor</Filter>
     </ClInclude>
@@ -118,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="SceneGame.h">
       <Filter>Header Files\scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Tileset.h">
+      <Filter>Header Files\motor</Filter>
+    </ClInclude>
+    <ClInclude Include="CargarMapas.h">
+      <Filter>Header Files\motor</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
