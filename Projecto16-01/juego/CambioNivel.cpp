@@ -8,7 +8,7 @@
 
 CambioNivel::CambioNivel()
 {
-	_cambioNivel = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puerta.png", 1);
+	_cambioNivel = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/puerta.png");
 
 	_posX = 500;
 	_posY = 500;
@@ -29,7 +29,7 @@ void CambioNivel::Update(float characterPosX, float characterPosY)
 void CambioNivel::Render()
 {
 	// Render CambioNivel
-	VideoManager::getInstance()->renderGraphic(_cambioNivel, _posX, _posY, 80, 80);
+	VideoManager::getInstance()->renderGraphic(_cambioNivel, _posX, _posY, 40, 40);
 }
 
 bool CambioNivel::CheckCharacterCollisionL(Character& character)

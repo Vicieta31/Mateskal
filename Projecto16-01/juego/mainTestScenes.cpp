@@ -5,6 +5,10 @@
 #include "SoundManager.h"
 #include <string>
 
+#include <cmath>
+#include <stdlib.h>
+#include <time.h>
+
 #include <iostream>
 
 using namespace std;
@@ -18,6 +22,7 @@ ResourceManager* rManager = NULL;
 
 int main(int argc, char* args[]) 
 {
+	srand(time(NULL));
 	// INIT todos los manager directors
 	VideoManager::getInstance();
 	sDirector = SceneDirector::getInstance();
@@ -30,7 +35,7 @@ int main(int argc, char* args[])
 		if (sDirector->getCurrentScene()->mustReInit()) {
 			sDirector->getCurrentScene()->init();
 		}
-		// kManager->update();
+
 		// Updates scene
 		kManager->Update();
 		sDirector->getCurrentScene()->update();

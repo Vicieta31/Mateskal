@@ -12,19 +12,19 @@ Character::Character()
 	_dir = 0;
 	_disp = 0;
 
-	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/jugador.png", 1);
-	_bullet = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/bala.png", 1);
+	_character = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/jugador.png");
+	_bullet = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/bala.png");
 
 	_health = 10;
 
 	_estaVivo = true;
 
-	_posX = 10;
-	_posY = 10;
+	_posX = 30;
+	_posY = 30;
 
-	vNormal = 0.3f; // velocidad direccion normal
-	vDiagonal = 0.1f; // velocidad direccion diagonal
-	vBullet = 0.5f; // Velocidad bala
+	vNormal = 0.6f; // velocidad direccion normal
+	vDiagonal = 0.4f; // velocidad direccion diagonal
+	vBullet = 1.0f; // Velocidad bala
 
 	_shotTimer = 0;
 }
@@ -50,7 +50,7 @@ void Character::Update(int dir, int shot)
 void Character::Render()
 {
 	// Render Character
-	VideoManager::getInstance()->renderGraphic(_character, _posX, _posY, 80, 80);
+	VideoManager::getInstance()->renderGraphic(_character, _posX, _posY, 40, 40);
 
 	// Render bullets
 	for (int i = 0; i < _bullets.size(); ++i) {
@@ -156,8 +156,8 @@ void Character::Shot() {
 	// Crear nueva bala al disparar
 	if (_disp != 0 && _shotTimer == 0) {
 		Bullet newBullet;
-		newBullet.posbX = _posX + 35;
-		newBullet.posbY = _posY + 35;
+		newBullet.posbX = _posX + 15;
+		newBullet.posbY = _posY + 15;
 		newBullet.dirb = _disp;
 		newBullet.timer = 800;  // Temporizador de vida de la bala
 		_bullets.push_back(newBullet);

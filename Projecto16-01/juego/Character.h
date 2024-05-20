@@ -35,7 +35,7 @@ private:
     std::vector<Bullet> _bullets;
 
     int _shotTimer;
-    const int _CooldownBullet = 600;
+    const int _CooldownBullet = 100;
 
     void Move();
     void Shot();

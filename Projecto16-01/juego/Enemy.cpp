@@ -9,7 +9,7 @@
 
 Enemy::Enemy()
 {
-	_enemy = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/enemigo.png", 1);
+	_enemy = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/enemigo.png");
 
 	_health = 5;
 
@@ -103,6 +103,10 @@ Enemy* Enemy::CreateEnemy()
 
 	// Vector para mantener las posiciones disponibles
 	static std::vector<Position> availablePositions(enemyPositions, enemyPositions + sizeof(enemyPositions) / sizeof(enemyPositions[0]));
+
+	if (availablePositions.empty()) {
+        return nullptr; // No hay posiciones disponibles, no crear enemigo
+    }
 
 	// Seleccionar una posición aleatoria para el nuevo enemigo
 	int randomIndex = rand() % availablePositions.size();

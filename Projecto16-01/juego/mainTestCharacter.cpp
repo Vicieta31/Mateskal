@@ -18,7 +18,7 @@ int main(int argc, char* args[])
 	int direccion = 0;
 	int disp = 0;
 
-	int Pantalla1 = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Pantalla1.jpg", 1);
+	int Pantalla1 = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Pantalla1.jpg");
 
 	ResourceManager::getInstance()->printLoadedGraphics();
 
