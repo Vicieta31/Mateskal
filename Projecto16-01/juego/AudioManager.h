@@ -4,8 +4,10 @@
 #include <map>
 #include <vector>
 #include <string>
-#include "SDL_mixer.h"
-#include "SDL.h"
+#include <SDL_mixer.h>
+#include <SDL.h>
+#include <iostream>
+
 
 //! AudioManager class
 /*!

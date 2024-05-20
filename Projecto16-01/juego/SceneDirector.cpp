@@ -1,41 +1,45 @@
 #include "SceneDirector.h"
+#include "SceneMainMenu.h"
+#include "SceneGame.h"
+#include <iostream>
 
 SceneDirector* SceneDirector::pInstance = NULL; 
 
 SceneDirector::SceneDirector()
 {
 	_placeHolder = 0;
-	scene = MainMenu;
+	actScene = MainMenu;
+	init();
 }
 SceneDirector::~SceneDirector()
 {
 }
 
-void SceneDirector::ChangeScene()
+void SceneDirector::init()
 {
-	if (_placeHolder == 1)
-	{
-		scene = MainMenu;
-	}
-	if (_placeHolder == 3)
-	{
-		if (scene == MainMenu)
-		{
-			scene = GameLevels;
-		}
-	}
-	if (_placeHolder == 5)
-	{
-		if (scene == MainMenu)
-		{
-			scene = HighScores;
-		}
-	}
+	mVectorScenes.resize(NUM_SCENES);
+
+	SceneMainMenu* mainS = new SceneMainMenu();
+	SceneGame* gameSce = new SceneGame();
+
+	mVectorScenes[MainMenu] = mainS; 
+	mVectorScenes[GameLevels] = gameSce;
+
+	mainS->init();
+	gameSce->init();
+	
+	actScene = MainMenu;
+
 }
 
-void SceneDirector::Update(int placeHolder)
+void SceneDirector::changeScene(scene nextScene, bool reinit)
 {
-	_placeHolder = placeHolder;
+	mVectorScenes[nextScene]->setReInit(reinit);
+	actScene = nextScene;
+}
 
-	ChangeScene();
+BaseScene* SceneDirector::getCurrentScene()
+{
+	//std::cout << mVectorScenes[actScene];
+	return mVectorScenes[actScene];
 }

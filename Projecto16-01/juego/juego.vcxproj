@@ -144,29 +144,38 @@
   <ItemGroup>
     <ClCompile Include="AudioChunker.cpp" />
     <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="BaseScene.cpp" />
+    <ClCompile Include="CargarMapas.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="mainTestCharacter.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SceneDirector.cpp" />
+    <ClCompile Include="SceneGame.cpp" />
+    <ClCompile Include="SceneMainMenu.cpp" />
     <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="Tileset.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="VideoManager.cpp" />
-    <ClCompile Include="XMLReader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioChunker.h" />
     <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="CargarMapas.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Glboals.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneDirector.h" />
+    <ClInclude Include="SceneGame.h" />
+    <ClInclude Include="SceneMainMenu.h" />
     <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="Tileset.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="VideoManager.h" />
-    <ClInclude Include="XMLReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
