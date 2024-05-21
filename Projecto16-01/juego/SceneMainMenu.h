@@ -5,6 +5,7 @@
 #include "InputManager.h"
 #include "SceneDirector.h"
 #include "ResourceManager.h"
+#include "SoundManager.h"
 
 #include "Glboals.h"
 

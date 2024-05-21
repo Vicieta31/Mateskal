@@ -55,6 +55,7 @@ void SceneGame::update()
 
 	if (cambioNivel.CheckCharacterCollisionL(character))// Devuelve true o false
 	{
+		SoundManager::getInstance()->PlaySound("Sounds/end.mp3", false);
 		character.RePosX();
 		character.RetPosY();
 		SceneDirector::getInstance()->changeScene(MainMenu);

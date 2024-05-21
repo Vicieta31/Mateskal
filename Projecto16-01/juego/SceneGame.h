@@ -5,6 +5,7 @@
 #include "VideoManager.h"
 #include "InputManager.h"
 #include "ResourceManager.h"
+#include "SoundManager.h"
 
 #include "BaseScene.h"
 #include "SceneDirector.h"

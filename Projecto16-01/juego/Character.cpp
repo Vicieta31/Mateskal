@@ -6,6 +6,7 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
+#include "SoundManager.h"
 
 Character::Character()
 {
@@ -155,6 +156,7 @@ void Character::Move()
 void Character::Shot() {
 	// Crear nueva bala al disparar
 	if (_disp != 0 && _shotTimer == 0) {
+		SoundManager::getInstance()->PlaySound("Sounds/shot.mp3", false);
 		Bullet newBullet;
 		newBullet.posbX = _posX + 15;
 		newBullet.posbY = _posY + 15;

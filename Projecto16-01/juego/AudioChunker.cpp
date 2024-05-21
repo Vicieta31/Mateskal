@@ -25,6 +25,10 @@ void AudioChunker() {
 	AudioManager::getInstance()->loadAndGetSoundID("Sounds/victory.wav");
 	AudioManager::getInstance()->loadAndGetSoundID("Sounds/waterfall.wav");
 
+	AudioManager::getInstance()->loadAndGetSoundID("Sounds/end.mp3");
+	AudioManager::getInstance()->loadAndGetSoundID("Sounds/backMu.mp3");
+	AudioManager::getInstance()->loadAndGetSoundID("Sounds/shot.mp3");
+
 	//Final Version Audio Files: 0
 
 }

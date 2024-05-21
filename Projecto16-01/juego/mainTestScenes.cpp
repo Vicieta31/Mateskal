@@ -30,6 +30,8 @@ int main(int argc, char* args[])
 	kManager = InputManager::getInstance();
 	rManager = ResourceManager::getInstance();
 
+	SoundManager::getInstance()->PlaySound("Sounds/backMu.mp3", true);
+
 	while (playing == true)
 	{
 		if (sDirector->getCurrentScene()->mustReInit()) {
