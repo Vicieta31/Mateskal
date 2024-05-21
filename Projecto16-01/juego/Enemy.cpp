@@ -16,7 +16,7 @@ Enemy::Enemy()
 	_posX = 500;
 	_posY = 500;
 
-	vEnemy = 0.1f;
+	vEnemy = 0.3f;
 }
 
 Enemy::~Enemy()
@@ -44,7 +44,7 @@ void Enemy::Update(float characterPosX, float characterPosY)
 void Enemy::Render()
 {
 	// Render Enemy
-	VideoManager::getInstance()->renderGraphic(_enemy, _posX, _posY, 80, 80);
+	VideoManager::getInstance()->renderGraphic(_enemy, _posX, _posY, 40, 40);
 }
 
 void Enemy::CheckCharacterCollisionE(Character& character)
@@ -60,8 +60,8 @@ void Enemy::ReduceHealth()
 	_health -= 1; // Reducir la salud del enemigo en 1
 	if (_health <= 0) {
 		// El enemigo ha perdido todas sus vidas
-		_posX = rand() % 999;
-		_posY = rand() % 639;
+		_posX = rand() % 650;
+		_posY = rand() % 500;
 		_health = 5;
 	}
 }
@@ -94,11 +94,16 @@ Enemy* Enemy::CreateEnemy()
 
 	// Definir posiciones
 	static const Position enemyPositions[] = {
-		{800, 500},   // Pos 1
+		{400, 500},   // Pos 1
 		{600, 200},   // Pos 2
 		{500, 400},   // Pos 3
-		{700, 300},   // Pos 4
-		{900, 100}    // Pos 5
+		{600, 300},   // Pos 4
+		{700, 100},   // Pos 5
+		{500, 500},   // Pos 6
+		{200, 200},   // Pos 7
+		{500, 400},   // Pos 8
+		{700, 300},   // Pos 9
+		{300, 100}    // Pos 10
 	};
 
 	// Vector para mantener las posiciones disponibles
