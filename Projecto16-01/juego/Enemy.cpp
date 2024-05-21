@@ -52,6 +52,8 @@ void Enemy::CheckCharacterCollisionE(Character& character)
 {
 	float distance = CalculateDistance(_posX, _posY, character.GetPosX(), character.GetPosY());
 	if (distance < 40) { // Radio de colisión del personaje
+		_health = 0;
+		ReduceHealth();
 		character.ReduceHealth();
 	}
 }
