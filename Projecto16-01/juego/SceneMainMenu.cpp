@@ -12,7 +12,9 @@ SceneMainMenu::~SceneMainMenu()
 
 void SceneMainMenu::init()
 {
-	backgroundImage = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/Bliss.png");
+	backgroundImage = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/portada.png");
+	buttonPlay = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/play.png");
+	buttonQuit = ResourceManager::getInstance()->loadAndGetGraphicID("TestResources/quit.png");
 	mReinit = false;
 }
 
@@ -31,10 +33,6 @@ void SceneMainMenu::update()
 		}
 		if (option == 1)
 		{
-			std::cout << "Escena " << option << "\n";
-		}
-		if (option == 2)
-		{
 			std::cout << "Exit " << option << "\n";
 			InputManager::getInstance()->SetPause();
 		}
@@ -48,10 +46,6 @@ void SceneMainMenu::update()
 	{
 		option = 1;
 	}
-	if (dir == dUP)
-	{
-		option = 2;
-	}
 
 }
 
@@ -59,4 +53,12 @@ void SceneMainMenu::render()
 {
 	std::cout << option << "\n";
 	VideoManager::getInstance()->renderGraphic(backgroundImage, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+	if (option == 0)
+	{
+		VideoManager::getInstance()->renderGraphic(buttonPlay, (SCREEN_WIDTH/2) - ResourceManager::getInstance()->getGraphicWidth(buttonPlay)/2, 450, ResourceManager::getInstance()->getGraphicWidth(buttonPlay), ResourceManager::getInstance()->getGraphicHeight(buttonPlay));
+	}
+	else
+	{
+		VideoManager::getInstance()->renderGraphic(buttonQuit, (SCREEN_WIDTH / 2) - ResourceManager::getInstance()->getGraphicWidth(buttonPlay) / 2, 450, ResourceManager::getInstance()->getGraphicWidth(buttonPlay), ResourceManager::getInstance()->getGraphicHeight(buttonPlay));
+	}
 }

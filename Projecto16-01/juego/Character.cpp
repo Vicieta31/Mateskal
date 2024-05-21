@@ -91,14 +91,14 @@ void Character::Move()
 	{
 	//ARRIBA
 	case 1:
-		if (_posY > 0)
+		if (_posY > 30)
 		{
 			_posY-= vNormal;
 		}
 		break;
 	//ARRIBA + DERECHA
 	case 2:
-		if ((_posY > 0) && (_posX < 1000))
+		if ((_posY > 30) && (_posX < 695))
 		{
 			_posX += vDiagonal;
 			_posY -= vDiagonal;
@@ -106,14 +106,14 @@ void Character::Move()
 		break;
 	//DERECHA
 	case 3:
-		if (_posX < 1000)
+		if (_posX < 695)
 		{
 			_posX+= vNormal;
 		}
 		break;
 	//DERECHA + ABAJO
 	case 4:
-		if ((_posX < 1000) && (_posY < 640))
+		if ((_posX < 695) && (_posY < 640))
 		{
 			_posX += vDiagonal;
 			_posY += vDiagonal;
@@ -128,7 +128,7 @@ void Character::Move()
 		break;
 	//ABAJO + IZQUIERDA
 	case 6:
-		if ((_posY < 640) && (_posX > 0))
+		if ((_posY < 640) && (_posX > 30))
 		{
 			_posX -= vDiagonal;
 			_posY += vDiagonal;
@@ -136,14 +136,14 @@ void Character::Move()
 		break;
 	//IZQUIERDA
 	case 7:
-		if (_posX > 0)
+		if (_posX > 30)
 		{
 			_posX-= vNormal;
 		}
 		break;
 	//IZQUIERDA + ARRIBA
 	case 8:
-		if ((_posX > 0) && (_posY > 0))
+		if ((_posX > 30) && (_posY > 30))
 		{
 			_posX -= vDiagonal;
 			_posY -= vDiagonal;

@@ -48,11 +48,17 @@ void SceneGame::update()
 
 	int jX = character.GetPosX();
 	int jY = character.GetPosY();
+	std::cout << jX << std::endl;
 
 	MyMap.setCameraPosition(jX, jY);
 
 
-	cambioNivel.CheckCharacterCollisionL(character); // Devuelve true o false
+	if (cambioNivel.CheckCharacterCollisionL(character))// Devuelve true o false
+	{
+		character.RePosX();
+		character.RetPosY();
+		SceneDirector::getInstance()->changeScene(MainMenu);
+	} 
 	/*
 	for (auto& enemy : enemies) {
 		enemy->Update(character.GetPosX(), character.GetPosY());

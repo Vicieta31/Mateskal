@@ -53,6 +53,9 @@ public:
 
     float GetPosX() const { return _posX; } // Obtener la posición X del personaje
     float GetPosY() const { return _posY; } // Obtener la posición Y del personaje
+
+    void RePosX() { _posX = 30; } 
+    void RetPosY() { _posY = 30; } 
     
     int GetHealth() const { return _health; } // Obtener la vida del personaje
 };

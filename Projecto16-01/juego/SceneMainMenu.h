@@ -12,6 +12,8 @@ class SceneMainMenu : public BaseScene
 {
 private:
 	Sint32 backgroundImage;
+	Sint32 buttonPlay;
+	Sint32 buttonQuit;
 	int option;
 public:
 	SceneMainMenu();
