@@ -62,6 +62,7 @@ void Character::Render()
 
 void Character::ReduceHealth()
 {
+	SoundManager::getInstance()->PlaySound("Sounds/plHurt.mp3", false);
 	_health -= 1; // Reducir la salud del personaje en 1
 	if (_health <= 0) {
 		// El personaje ha perdido todas sus vidas

@@ -60,6 +60,13 @@ void SceneGame::update()
 		character.RetPosY();
 		SceneDirector::getInstance()->changeScene(MainMenu);
 	} 
+	if (!character.GetLive())
+	{
+		SoundManager::getInstance()->PlaySound("Sounds/lose.mp3", false);
+		character.RePosX();
+		character.RetPosY();
+		SceneDirector::getInstance()->changeScene(MainMenu);
+	}
 	/*
 	for (auto& enemy : enemies) {
 		enemy->Update(character.GetPosX(), character.GetPosY());

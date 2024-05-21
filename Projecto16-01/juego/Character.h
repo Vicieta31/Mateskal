@@ -58,4 +58,5 @@ public:
     void RetPosY() { _posY = 30; } 
     
     int GetHealth() const { return _health; } // Obtener la vida del personaje
+    bool GetLive() const { return _estaVivo; };
 };
