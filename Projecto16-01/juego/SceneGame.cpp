@@ -8,8 +8,9 @@ SceneGame::SceneGame()
 SceneGame::~SceneGame()
 {
 	// Limpiar memoria al finalizar
-	for (auto& enemy : enemies) {
-		delete enemy;
+	for (int i = 0; i < enemies.size(); ++i) {
+		const Enemy& enemy = *enemies[i];
+		delete enemies[i];
 	}
 	enemies.clear();
 }
@@ -60,11 +61,12 @@ void SceneGame::update()
 		character.RetPosY();
 		SceneDirector::getInstance()->changeScene(MainMenu);
 	} 
-	/*
-	for (auto& enemy : enemies) {
-		enemy->Update(character.GetPosX(), character.GetPosY());
-		character.CheckBulletCollision(*enemy);
-		enemy->CheckCharacterCollisionE(character);
+	
+	for (int i = 0; i < enemies.size(); ++i) {
+		const Enemy& enemy = *enemies[i];
+		enemies[i]->Update(character.GetPosX(), character.GetPosY());
+		character.CheckBulletCollision(*enemies[i]);
+		enemies[i]->CheckCharacterCollisionE(character);
 	}
 	// Eliminar enemigos muertos
 	enemies.erase(remove_if(enemies.begin(), enemies.end(), [](Enemy* enemy) {
@@ -74,7 +76,7 @@ void SceneGame::update()
 		}
 	return false;
 		}), enemies.end());
-		*/
+		
 }
 
 void SceneGame::render()
@@ -86,10 +88,11 @@ void SceneGame::render()
 	// Clases propias render
 	cambioNivel.Render();
 	character.Render();
-	/*
-	for (auto& enemy : enemies) {
-		enemy->Render();
+
+	for (int i = 0; i < enemies.size(); ++i) {
+		const Enemy& enemy = *enemies[i];
+			enemies[i]->Render();
 	}
-	*/
+	
 	VideoManager::getInstance()->updateScreen();
 }
