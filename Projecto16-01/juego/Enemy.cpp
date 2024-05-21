@@ -6,6 +6,7 @@
 #include "VideoManager.h"
 #include "ResourceManager.h"
 #include "InputManager.h"
+#include "SoundManager.h"
 
 Enemy::Enemy()
 {
@@ -57,6 +58,7 @@ void Enemy::CheckCharacterCollisionE(Character& character)
 
 void Enemy::ReduceHealth()
 {
+	SoundManager::getInstance()->PlaySound("Sounds/enHurt.mp3", false);
 	_health -= 1; // Reducir la salud del enemigo en 1
 	if (_health <= 0) {
 		// El enemigo ha perdido todas sus vidas

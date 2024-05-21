@@ -59,8 +59,18 @@ void SceneGame::update()
 		SoundManager::getInstance()->PlaySound("Sounds/end.mp3", false);
 		character.RePosX();
 		character.RetPosY();
+		character.RetHp();
 		SceneDirector::getInstance()->changeScene(MainMenu);
 	} 
+	if (!character.GetLive())
+	{
+		SoundManager::getInstance()->PlaySound("Sounds/lose.mp3", false);
+		character.RePosX();
+		character.RetPosY();
+		character.RetHp();
+		SceneDirector::getInstance()->changeScene(MainMenu);
+	}
+
 	
 	for (int i = 0; i < enemies.size(); ++i) {
 		const Enemy& enemy = *enemies[i];
