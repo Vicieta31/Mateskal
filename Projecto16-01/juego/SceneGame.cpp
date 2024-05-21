@@ -44,7 +44,7 @@ void SceneGame::update()
 	direccion = InputManager::getInstance()->GetDirection();
 
 	dispDireccion = InputManager::getInstance()->GetShot();
-
+	
 	character.Update(direccion, dispDireccion);
 
 	int jX = character.GetPosX();

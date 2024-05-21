@@ -56,7 +56,7 @@ public:
 
     void RePosX() { _posX = 30; } 
     void RetPosY() { _posY = 30; } 
-    void RetHp() { _health = 10; }
+    void RetHp() { _health = 10; _estaVivo = true; }
     
     int GetHealth() const { return _health; } // Obtener la vida del personaje
     bool GetLive() const { return _estaVivo; };
